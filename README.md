@@ -4,9 +4,8 @@
 ## Scope of the application
 
 The application receives TCP messages and it broadcasts them using ZeroMQ.
-
-Each message must be a valid JSON.
-As convention, to terminate a message the byte `7` must be used.
+As convention, to terminate a message the byte `7` must be used
+(therefore the messages cannot contains this byte).
 
 ## Logs
 

@@ -1,0 +1,12 @@
+
+[tcp]
+# TCP server endpoint
+endpoint = "127.0.0.1:1974"
+
+# byte used to terminate the message
+message_termination_byte = 7
+
+[zero]
+# ZeroMQ publisher endpoint
+pub_endpoint = "tcp://*:2007"
+pub_topic = "parrot"
