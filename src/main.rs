@@ -32,6 +32,7 @@ async fn main() {
 
     let broadcast = Broadcast::new(&conf.zero.pub_endpoint).unwrap();
     let broadcast = Arc::new(Mutex::new(broadcast));
+    info!("ZeroMQ publisher binded at {}", &conf.zero.pub_endpoint);
 
     let settings = Arc::new(conf);
     let server = {
@@ -74,7 +75,7 @@ async fn on_connection(stream: TcpStream, broadcast: Arc<Mutex<Broadcast>>, conf
                     });
             }
             Err(err) => {
-                eprintln!("TCP socket decode error: {:?}", err);
+                error!("TCP socket decode error: {:?}", err);
             }
         }
     }
